@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24&display=swap");
+:root {
+    --box-bg: rgb(27, 26, 26);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: rgb(40, 39, 39);
+}
+
+*::selection{
+    color: red;
+}
+
+.background-name {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(74, 72, 72);
+  font-size: 14lvw;
+  font-family: "Dancing Script", cursive;
+  z-index: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: auto;
+  padding: 2rem 2rem 2rem 2rem;
+  height: 5%;
+  background-color: var(--box-bg);
+  border-radius: 5px;
+  animation: 5s ease-in-out 0s infinite alternate shadows;
+  position: fixed;
+  top: 3%;
+  left: 5vw;
+  z-index: 10;
+}
+
+@keyframes shadows {
+  0% {
+    box-shadow: 10px 10px 30px rgb(76, 75, 75);
+  }
+  100% {
+    box-shadow: -10px -10px 10px rgb(76, 75, 75);
+  }
+}
+
+.logo {
+  width: 20%;
+  font-size: x-large;
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+  transition: all 0.4s;
+}
+
+.logo-anchor {
+  text-decoration: none;
+}
+
+.nav-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  margin-left: 12rem;
+  position: relative;
+}
+
+.nav-element {
+  text-decoration: none;
+  color: rgb(224, 218, 218);
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: solid rgb(27, 26, 26) 2px;
+}
+
+.nav-element:hover {
+  border: solid rgb(49, 48, 48) 2px;
+  background-color: rgb(17, 17, 17);
+  transition: all 0.4s;
+  color: red;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  width: 10%;
+  align-items: center;
+}
+
+.social-img {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+.social-img:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+
+main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.introduction,.skills{
+    position: absolute;
+    background-color: var(--box-bg);
+    padding: 2rem;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0.6;
+    animation: 2s ease-in-out 0s infinite alternate shadows-intro;
+}
+
+.introduction{
+    width: 30%;
+    height: 77%;
+    left: 5vw;
+    top: 20%;
+    animation: 0.4s ease 0s 1 forwards sizeUP;
+}
+
+@keyframes sizeUP{
+  0% {
+  transform: scale(0);
+}
+100% {
+  transform: scale(1);
+  }
+}
+
+.skills{
+    right: 5vw;
+    width: 57%;
+    height: 77%;
+    top: 20%;
+    transform: scale(0);
+    animation: 0.4s ease 0.4s 1 forwards sizeUP;
+}
+
+@keyframes shadows-intro {
+    0% {
+    box-shadow: 0 0 20px rgb(76, 75, 75);
+  }
+  100% {
+      box-shadow: 0 0 0px rgb(76, 75, 75);
+    }
+}
+
+.introduction>span, .skills>span{
+    font-size: 2.6lvw;
+}
+
+
+.skills-list{
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+
+.frameworks-list
+{
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+
+.frameworks-list li span
+{
+    font-weight: bold;
+}
+
+@media (max-width: 660px) {
+  .socials {
+    position: fixed;
+    bottom: 3%;
+    right: 15%;
+  }
+
+  .nav-elements {
+    margin-left: 0;
+    width: 60%;
+  }
+
+  .introduction{
+    width: 90vw;
+    height: 45%;
+    top: 15%;
+  }
+
+  .introduction>span, .skills>span{
+    font-size: 8lvw;
+  }
+
+  .skills{
+    top: 50%;
+    width: 90vw;
+    height: 45%;
+  }
+}
+
+@media (max-width: 400px)
+{
+    .skills{
+        height: 56%;
+    }
+}
